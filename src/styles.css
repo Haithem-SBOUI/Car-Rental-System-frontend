@@ -1,8 +1,11 @@
 :root {
-  --main-color: #A32C30;
+  --main-color: rgba(163, 44, 48, 0);
   --second-color: #20262C;
   --btn1-color: #A32C30;
   --btn2-color: rgb(245, 164, 37);
+
+  --price-font: 'Kalam', cursive;
+  --car-name-font: 'Raleway', sans-serif;
 }
 body {
   color: #1b1b1e;
@@ -54,4 +57,21 @@ body {
 .custom-card2 {
   border-bottom: var(--btn2-color) 4px solid;
   border-top: var(--btn2-color) 4px solid;
+}
+
+.price-font {
+  font-family: var(--price-font);
+  font-weight: 600;
+  font-size: 35px;
+  letter-spacing: 1px;
+  color: var(--second-color);
+}
+
+.car-title {
+  font-family: var(--car-name-font);
+  font-weight: 600;
+}
+
+span {
+  color: #363636;
 }
