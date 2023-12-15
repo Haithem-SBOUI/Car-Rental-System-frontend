@@ -1,1 +1,57 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --main-color: #A32C30;
+  --second-color: #20262C;
+  --btn1-color: #A32C30;
+  --btn2-color: rgb(245, 164, 37);
+}
+body {
+  color: #1b1b1e;
+}
+
+
+.custom-btn1-lg {
+  background-color: var(--btn1-color);
+  color: white;
+  width: 100%;
+}
+
+.custom-btn1-lg:hover {
+  background-color: var(--btn1-color);
+  opacity: 0.9;
+  color: white;
+}
+
+.custom-btn1-sm {
+  background-color: var(--btn1-color);
+  color: white;
+  width: 30%;
+}
+
+.custom-btn1-sm:hover {
+  background-color: var(--btn1-color);
+  opacity: 0.9;
+  color: white;
+}
+
+
+.custom-btn2-lg {
+  background-color: var(--btn2-color);
+  color: white;
+  width: 100%;
+}
+
+.custom-btn2-lg:hover {
+  background-color: var(--btn2-color);
+  opacity: 0.9;
+  color: white;
+}
+
+.custom-card1 {
+  border-bottom: var(--btn1-color) 4px solid;
+  /*border-top: var(--btn1-color) 4px solid;*/
+}
+
+.custom-card2 {
+  border-bottom: var(--btn2-color) 4px solid;
+  border-top: var(--btn2-color) 4px solid;
+}

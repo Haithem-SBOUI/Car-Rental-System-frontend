@@ -27,7 +27,11 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/chart.min.js",
+              "src/assets/js/theme.js",
+              "src/assets/js/bs-init.js"
+            ]
           },
           "configurations": {
             "production": {

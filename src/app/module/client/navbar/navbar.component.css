@@ -1,0 +1,10 @@
+.navbar {
+  display: flex;
+
+  position: absolute;
+  z-index: 1;
+
+
+  background-color: rgba(255, 0, 0, 0.7); /* Adjust the last value for transparency */
+
+}
