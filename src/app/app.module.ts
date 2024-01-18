@@ -7,6 +7,7 @@ import {CommonModule} from "@angular/common";
 import {FormsModule} from "@angular/forms";
 import {AdminModule} from "./module/admin/admin.module";
 import {ClientModule} from "./module/client/client.module";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {ClientModule} from "./module/client/client.module";
     CommonModule,
     FormsModule,
     AdminModule,
-    ClientModule
+    ClientModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

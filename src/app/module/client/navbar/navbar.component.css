@@ -1,10 +1,12 @@
 .navbar {
   display: flex;
-
   position: absolute;
   z-index: 1;
+}
 
 
-  background-color: rgba(255, 0, 0, 0.7); /* Adjust the last value for transparency */
-
+a, li {
+  color: #464646 !important;
+  font-weight: bold;
+  font-size: 17px;
 }

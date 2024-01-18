@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {AppComponent} from "./app.component";
 
 const routes: Routes = [
   { path: 'admin',
@@ -8,6 +9,7 @@ const routes: Routes = [
   { path: 'user',
     loadChildren: () => import('./module/client/client-routing.module')
       .then(m => m.ClientRoutingModule) },
+  { path:'', redirectTo: 'user/home', pathMatch: "full"}
 ];
 
 @NgModule({

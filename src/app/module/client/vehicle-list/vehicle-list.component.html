@@ -1,63 +1,63 @@
-<user-navbar></user-navbar>
+<!--<user-navbar></user-navbar>-->
 
 
-<section class="section1">
-  <div class="container">
-    <div class="overlay">
-      <!-- Content in the middle of the section -->
-      <div class="searchbox">
-        <!-- search section start  -->
-        <section id="search">
-          <div class="container search-block p-5">
+<!--<section class="section1">-->
+<!--  <div class="container">-->
+<!--    <div class="overlay">-->
+<!--      &lt;!&ndash; Content in the middle of the section &ndash;&gt;-->
+<!--      <div class="searchbox">-->
+<!--        &lt;!&ndash; search section start  &ndash;&gt;-->
+<!--        <section id="search">-->
+<!--          <div class="container search-block p-5">-->
 
-            <form class="row">
-              <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
-                <label for="vehicle" class="text-capitalize form-label">Vehicle Brand</label>
-                <div class="input-group date ">
-                  <!-- <input type="text" class="form-control p-3 " id="vehicle" placeholder="Select Car Group" /> -->
-                  <select class="form-select form-control p-3" id="vehicle" aria-label="Default select example">
-                    <option selected disabled>Car Brands?</option>
-                    <option value="1">BMW x3</option>
-                    <option value="2">BMW M2</option>
-                  </select>
+<!--            <form class="row">-->
+<!--              <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">-->
+<!--                <label for="vehicle" class="text-capitalize form-label">Vehicle Brand</label>-->
+<!--                <div class="input-group date ">-->
+<!--                  &lt;!&ndash; <input type="text" class="form-control p-3 " id="vehicle" placeholder="Select Car Group" /> &ndash;&gt;-->
+<!--                  <select class="form-select form-control p-3" id="vehicle" aria-label="Default select example">-->
+<!--                    <option selected disabled>Car Brands?</option>-->
+<!--                    <option value="1">BMW x3</option>-->
+<!--                    <option value="2">BMW M2</option>-->
+<!--                  </select>-->
 
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
-                <label for="location" class="label-style text-capitalize form-label">Car Model</label>
-                <div class="input-group date">
-                  <input type="text" class="form-control p-3 position-relative" id="location"
-                         placeholder="Golf 6?"/>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
-                <label for="fuel" class="label-style text-capitalize form-label">fuel</label>
-                <div class="input-group date">
-                  <input type="text" class="form-control p-3 position-relative" id="fuel"
-                         placeholder="Gasoline?"/>
-                </div>
-              </div>
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">-->
+<!--                <label for="location" class="label-style text-capitalize form-label">Car Model</label>-->
+<!--                <div class="input-group date">-->
+<!--                  <input type="text" class="form-control p-3 position-relative" id="location"-->
+<!--                         placeholder="Golf 6?"/>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">-->
+<!--                <label for="fuel" class="label-style text-capitalize form-label">fuel</label>-->
+<!--                <div class="input-group date">-->
+<!--                  <input type="text" class="form-control p-3 position-relative" id="fuel"-->
+<!--                         placeholder="Gasoline?"/>-->
+<!--                </div>-->
+<!--              </div>-->
 
-              <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
-                <label for="fuel" class="label-style text-capitalize form-label">fuel</label>
-                <div class="input-group date">
-                  <input type="text" class="form-control p-3 position-relative" id="fuel"
-                         placeholder="Gasoline?"/>
-                </div>
-              </div>
+<!--              <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">-->
+<!--                <label for="fuel" class="label-style text-capitalize form-label">fuel</label>-->
+<!--                <div class="input-group date">-->
+<!--                  <input type="text" class="form-control p-3 position-relative" id="fuel"-->
+<!--                         placeholder="Gasoline?"/>-->
+<!--                </div>-->
+<!--              </div>-->
 
-            </form>
+<!--            </form>-->
 
-            <div class="d-grid gap-2 mt-4">
-              <button class="btn custom-btn1-lg " type="button">Find your car</button>
-            </div>
-          </div>
+<!--            <div class="d-grid gap-2 mt-4">-->
+<!--              <button class="btn custom-btn1-lg " type="button">Find your car</button>-->
+<!--            </div>-->
+<!--          </div>-->
 
-        </section>
-      </div>
-    </div>
-  </div>
-</section>
+<!--        </section>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</section>-->
 
 <!--start vehicle list -->
 <section id="rental" class="position-relative">
@@ -71,143 +71,44 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <div class="row">
-            <div class="col-md-4 ">
-              <div class="card custom-card1  my-3 shadow">
+            <div class="col-md-4 " *ngFor="let vehicle of this.vehicleDetails">
+              <div class="card custom-card1 position-relative my-3 shadow">
                 <a><img src="assets/img/car1.png" class="card-img-top" alt="car-img"></a>
                 <div class="card-body p-4">
                   <a>
-                    <h4 class="car-title text-black mb-4">VOLKSWAGEN, <small><i>Golf 6</i></small></h4>
+                    <h4 class="car-title text-black mb-4">{{ vehicle.brand }}, <small><i>{{ vehicle.model }}</i></small></h4>
                   </a>
                   <div class="card-text ">
                     <div class="row">
                       <div class="col-6">
                     <span class="iconify my-1" data-icon="bi:fuel-pump-fill" data-width="25" data-height="25"
-                          style="color: #575757;"></span><span> : Essence</span><br>
+                          style="color: #575757;"></span><span> : {{ vehicle.fuel }}</span><br>
                         <span class="iconify mt-1" data-icon="material-symbols:airline-seat-recline-extra"
                               data-width="28"
                               data-height="28" style="color: #575757;"></span><span> : 5 Seats</span><br>
                       </div>
                       <div class="col-6">
                       <span class="iconify my-1" data-icon="tabler:manual-gearbox" data-width="26" data-height="26"
-                            style="color: #575757;"></span><span> : Automatic</span><br>
+                            style="color: #575757;"></span><span> : {{ vehicle.transmissionType }}</span><br>
                         <span class="iconify mt-1" data-icon="mdi:ac-unit" style="color: #575757;" data-width="26"
                               data-height="26"></span><span> : Available</span><br>
                       </div>
                     </div>
                   </div>
                   <hr>
+                  <div class="position-absolute top-0 start-0 p-2 m-2 price-font">
+                    {{ vehicle.pricePerDay  }} TND<span class="rental-price">/day</span>
+                  </div>
                   <div class="d-flex justify-content-between">
-                  <h3 class="pt-2 price-font">120 TND<span class="rental-price">/day</span>
-                    </h3>
+
+                    <button class="btn custom-btn1-sm" routerLink="/user/vehicle-details">Full Spec</button>
                     <button class="btn custom-btn1-sm">Rent now</button>
                   </div>
 
                 </div>
               </div>
             </div>
-            <div class="col-md-4">
-              <div class="card my-3">
-                <a><img src="assets/img/car1.png" class="card-img-top" alt="..."></a>
-                <div class="card-body ">
-                  <a>
-                    <h4 class="card-title">BMW x3</h4>
-                  </a>
-                  <div class="card-text ">
 
-                    <ul class="d-flex list-unstyled">
-                      <div class="col-md-6">
-                        <li class="rental-list">
-                          Sports
-                        </li>
-                        <li class="rental-list"><i class="fas fa-circle fa-xs px-2" style="color: grey"></i>
-                        </li>
-                        <li class="rental-list"> Auto</li>
-                        <li class="rental-list"><i class="fas fa-circle fa-xs px-2" style="color: grey"></i>
-                        </li>
-                      </div>
-                      <div class="col-md-6">
-
-                        <li class="rental-list"> 4 Passengers</li>
-                        <li class="rental-list"><i class="fas fa-circle fa-xs px-2" style="color: grey"></i>
-                        </li>
-                        <li class="rental-list display-small"> Diesel</li>
-                      </div>
-
-                    </ul>
-                  </div>
-                  <hr>
-                  <div class="d-flex justify-content-between">
-                    <h3 class="pt-2">369 TND <span class="rental-price">/day</span></h3>
-                    <a routerLink="" class="btn btn-primary">rent now </a>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card my-3">
-                <a><img src="assets/img/car1.png" class="card-img-top" alt="..."></a>
-                <div class="card-body p-4">
-                  <a>
-                    <h4 class="card-title">BMW x3</h4>
-                  </a>
-                  <div class="card-text ">
-                    <ul class="d-flex list-unstyled">
-                      <li class="rental-list">
-                        Sports
-                      </li>
-                      <li class="rental-list"><i class="fas fa-circle fa-xs px-2" style="color: grey"></i>
-                      </li>
-                      <li class="rental-list"> Auto</li>
-                      <li class="rental-list"><i class="fas fa-circle fa-xs px-2" style="color: grey"></i>
-                      </li>
-                      <li class="rental-list"> 4 Passengers</li>
-                      <li class="rental-list"><i class="fas fa-circle fa-xs px-2" style="color: grey"></i>
-                      </li>
-                      <li class="rental-list display-small"> Diesel</li>
-                    </ul>
-                  </div>
-                  <hr>
-                  <div class="d-flex justify-content-between">
-                    <h3 class="pt-2">369 TND <span class="rental-price">/day</span></h3>
-                    <a routerLink="" class="btn btn-primary">rent now </a>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="card my-3">
-                <a><img src="assets/img/car1.png" class="card-img-top" alt="..."></a>
-                <div class="card-body p-4">
-                  <a>
-                    <h4 class="card-title">BMW x3</h4>
-                  </a>
-                  <div class="card-text ">
-                    <ul class="d-flex list-unstyled">
-                      <li class="rental-list">
-                        Sports
-                      </li>
-                      <li class="rental-list"><i class="fas fa-circle fa-xs px-2" style="color: grey"></i>
-                      </li>
-                      <li class="rental-list"> Auto</li>
-                      <li class="rental-list"><i class="fas fa-circle fa-xs px-2" style="color: grey"></i>
-                      </li>
-                      <li class="rental-list"> 4 Passengers</li>
-                      <li class="rental-list"><i class="fas fa-circle fa-xs px-2" style="color: grey"></i>
-                      </li>
-                      <li class="rental-list display-small"> Diesel</li>
-                    </ul>
-                  </div>
-                  <hr>
-                  <div class="d-flex justify-content-between">
-                    <h3 class="pt-2">369 TND <span class="rental-price">/day</span></h3>
-                    <a routerLink="" class="btn btn-primary">rent now </a>
-                  </div>
-
-                </div>
-              </div>
-            </div>
           </div>
         </div>
 

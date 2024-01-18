@@ -6,11 +6,7 @@
   border-radius: 15px;
 }
 
-.rental-price {
-  font-size: 20px;
-  letter-spacing: 0.02em;
-  text-transform: capitalize;
-}
+
 
 .section1 {
   background-image: url('/assets/img/item-large2.jpg'); /* Replace with your image path */

@@ -1,16 +1,12 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-
-  constructor() { }
-}
-
-
-/*export class AuthService {
   private baseUrl = 'http://localhost:8080/api/v1/user';
+
 
   constructor(private http: HttpClient) {
   }
@@ -58,5 +54,9 @@ export class AuthService {
 
   }
 
+  isLoggedIn() {
+    const userDetails = localStorage.getItem('userDetails');
+    return userDetails != null;
+  }
 }
-*/
+
