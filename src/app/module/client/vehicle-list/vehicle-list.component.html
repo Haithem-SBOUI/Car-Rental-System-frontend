@@ -62,7 +62,7 @@
 <!--start vehicle list -->
 <section id="rental" class="position-relative">
   <div class="container">
-    <h2 class=" text-center my-5">cars for <span class="text-primary"> rental </span></h2>
+    <h2 class=" text-center my-5">Available<span class="text-primary"> Vehicle </span></h2>
 
     <div class="swiper-button-next rental-swiper-next  rental-arrow position-absolute"></div>
     <div class="swiper-button-prev rental-swiper-prev rental-arrow position-absolute"></div>
@@ -101,7 +101,7 @@
                   </div>
                   <div class="d-flex justify-content-between">
 
-                    <button class="btn custom-btn1-sm" routerLink="/user/vehicle-details">Full Spec</button>
+                    <button class="btn custom-btn1-sm" (click)="redirectToDetails(vehicle.id)">Full Spec</button>
                     <button class="btn custom-btn1-sm">Rent now</button>
                   </div>
 

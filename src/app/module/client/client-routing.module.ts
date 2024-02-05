@@ -7,14 +7,18 @@ import {LoginComponent} from "./auth/login/login.component";
 import {RegisterComponent} from "./auth/register/register.component";
 import {VehicleDetails} from "../../model/VehicleDetails.model";
 import {VehicleDetailsComponent} from "./vehicle-details/vehicle-details.component";
+import {AllVehicleComponent} from "./all-vehicle/all-vehicle.component";
+import {RentDetailsComponent} from "./rent-details/rent-details.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'home', component: HomeComponent},
   {path: 'navbar', component: NavbarComponent},
-  {path: 'all-car', component: VehicleListComponent},
-  {path: 'vehicle-details', component: VehicleDetailsComponent},
+  {path: 'vehicle-list', component: VehicleListComponent},
+  {path: 'fetch-vehicle', component: AllVehicleComponent},
+  {path: 'rent-details', component: RentDetailsComponent},
+  {path: 'vehicle-details/:id', component: VehicleDetailsComponent},
 
 ];
 

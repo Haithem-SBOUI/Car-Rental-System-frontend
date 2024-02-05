@@ -11,24 +11,113 @@
         </div>
         <div class="col-md-6">
           <div class="col-md-6">
-            <p>idVehicle</p>
-            <p>licensePlateNumber</p>
-            <p>brand</p>
-            <p>model</p>
-            <p>launchYear</p>
-            <p>color</p>
-            <p>mileage</p>
-            <p>fuel</p>
-            <p>transmissionType</p>
-            <p>horsPower</p>
-            <p>pricePerDay</p>
-            <p>isAvailable</p>
-            <p>insurance</p>
-            <p>lastMaintenanceMileage</p>
+
+
+            <div class="position-absolute top-0 end-0 p-2 m-3 text-white price-font ">
+              <i></i>
+              <span class="text-white">{{ this.vehicleDetails.pricePerDay }} TND</span><span
+              class="rental-price">/day</span>
+            </div>
+
+            <div class="my-3">
+              <h4 class="car-title text-black ">{{ this.vehicleDetails.brand }}</h4>
+            </div>
+            <div>
+              <h4 class="car-title ">
+                <i
+                  class="text-black me-2">{{ this.vehicleDetails.model }}</i>
+                <small>({{ this.vehicleDetails.launchYear }})</small>
+              </h4>
+            </div>
+
+            <div class="my-3">
+              <ng-container *ngIf="this.vehicleDetails.isAvailable; else secondShow">
+                <div style="color: green;">
+
+                  <span class="iconify" data-icon="fluent:presence-available-12-regular"></span>
+                  Available
+                </div>
+
+              </ng-container>
+              <ng-template #secondShow>
+                <div style="color: red;">
+                  <span class="iconify" data-icon="iconamoon:unavailable-fill" data-width="18"></span>
+                  Not Available
+                </div>
+              </ng-template>
+            </div>
+
+            <div class="my-2">
+              <b><span class="me-2">Plate Number :</span></b>
+              <span>{{ this.vehicleDetails.licensePlateNumber | plateNumberCaching }}</span>
+            </div>
+            <div class="my-2">
+              <i></i>
+              <b><span class="me-2">Mileage :</span></b>
+              <span>{{ this.vehicleDetails.mileage }}</span>
+            </div>
+
+            <div class="my-2">
+              <b><span class="me-2">Hors Power :</span></b>
+              <span>{{ this.vehicleDetails.horsPower }} Hp</span>
+            </div>
+
+            <div class="my-2">
+              <b><span class="me-2">Fuel Type :</span></b>
+              <span>{{ this.vehicleDetails.fuel }}</span>
+            </div>
+
+            <div class="my-2">
+              <b><span class="me-2">Transmission Type :</span></b>
+              <span>{{ this.vehicleDetails.transmissionType }}</span>
+            </div>
+
+            <div class="my-2">
+              <b><span class="me-2">color :</span></b>
+              <span class="color-square" [style.background-color]="this.vehicleDetails.color"></span>
+            </div>
+
+            <form [formGroup]="createReservationForm" (ngSubmit)="createReservation(this.vehicleDetails.id)">
+              <div class="row">
+              <div class="col-md-6 my-2 ">
+                <input type="date" formControlName="pickupDate" class="datePicker" >
+              </div>
+              <div class="col-md-6 my-2 ">
+                <input type="date" formControlName="returnDate" class="datePicker">
+              </div>
+              </div>
+              <p>Form Status: {{ createReservationForm.status }}</p>
+
+              <div class="row my-4">
+                <div class="col-md-4">
+                  <button class="btn btn-secondary">Back</button>
+                </div>
+
+                <div class="col-md-8">
+                  <button class="btn custom-btn1-lg" type="button" (click)="calculateTotalPrice()" [disabled]="!createReservationForm.valid">Calculate total
+                  </button>
+                </div>
+                <div class="col-md-8">
+                  <button class="btn custom-btn1-lg" type="submit" [disabled]="!createReservationForm.valid">Rent Now
+                  </button>
+                </div>
+              </div>
+            </form>
+
+
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="container mt-5">
+  <div>
+    other offers ?
   </div>
+
+</div>
+
+
 

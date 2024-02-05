@@ -9,6 +9,9 @@ import { LoginComponent } from './auth/login/login.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { RegisterComponent } from './auth/register/register.component';
 import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.component';
+import {SharedModule} from "../../shared/shared.module";
+import { AllVehicleComponent } from './all-vehicle/all-vehicle.component';
+import { RentDetailsComponent } from './rent-details/rent-details.component';
 
 
 @NgModule({
@@ -18,12 +21,15 @@ import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.compo
     VehicleListComponent,
     LoginComponent,
     RegisterComponent,
-    VehicleDetailsComponent
+    VehicleDetailsComponent,
+    AllVehicleComponent,
+    RentDetailsComponent
   ],
   imports: [
     CommonModule,
     ClientRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule
   ]
 })
 export class ClientModule {

@@ -61,7 +61,7 @@ body {
 
 .price-font {
   background-color: rgba(163, 44, 48);
-  color: white;
+  color: white!important;
   font-family: var(--price-font);
   font-weight: 600;
   font-size: 20px;

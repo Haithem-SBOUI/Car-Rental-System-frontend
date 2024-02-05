@@ -1,5 +1,5 @@
 export class VehicleDetails {
-  idVehicle?: bigint;
+  id?: string;
   licensePlateNumber?: string;
   brand?: string;
   model?: string;
