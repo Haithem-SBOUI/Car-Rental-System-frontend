@@ -29,6 +29,7 @@ export class VehicleDetailsComponent implements OnInit {
     this.route.params.subscribe(
       params => {
         this.vehicleDetails.id = params["id"];
+        console.log("this.vehicleDetails.id", this.vehicleDetails.id)
       }
     );
 

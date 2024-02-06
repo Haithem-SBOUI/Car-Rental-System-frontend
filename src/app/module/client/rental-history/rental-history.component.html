@@ -1,3 +1,93 @@
 <user-navbar></user-navbar>
 
+<div class="mt-10">
+  <div class="card mx-4">
+    <div class="table-responsive">
+      <table class="table align-items-center mb-0">
+        <thead>
+        <tr>
+          <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Car Info</th>
+          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">pickupDate</th>
+          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">returnDate</th>
+          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Price</th>
+          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">status</th>
+          <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">status</th>
+          <!--          <th class="text-secondary opacity-7"></th>-->
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let rent of this.rentalHistory">
+          <td>
+            <div class="d-flex px-2 py-1">
+              <div>
+                <img src="assets/img/mercedes_1_png.png"
+                     class="avatar avatar-sm me-3">
+              </div>
+              <div class="d-flex flex-column justify-content-center">
+                <h6 class="mb-0 text-xs">{{ rent.vehicle?.model }}</h6>
+                <p class="text-xs text-secondary mb-0">{{ rent.vehicle?.brand }}</p>
+              </div>
+            </div>
+          </td>
+          <td class="align-middle text-center">
+            <span class="text-secondary text-xs font-weight-bold">{{ rent.pickupDate }}</span>
+          </td>
+          <td class="align-middle text-center">
+            <span class="text-secondary text-xs font-weight-bold">{{ rent.returnDate }}</span>
+          </td>
+          <td class="align-middle text-center">
+            <span class="text-secondary text-xs font-weight-bold">{{ rent.totalPrice }} TND</span>
+          </td>
+          <td class="align-middle text-center text-sm">
+            <span [ngClass]="getStatusClass(rent.status)">{{ rent.status }}</span>
+          </td>
+
+          <td class="align-middle text-center text-sm">
+
+
+            <button type="button" class="btn btn-outline-info btn-sm mx-1"
+                    (click)="redirectToDetails(rent.id)">View
+            </button>
+            <ng-container *ngIf="rent.status == 'PENDING' ">
+              <button type="button" class="btn btn-danger btn-sm mb-3" data-bs-toggle="modal"
+                      data-bs-target="#modal-notification">Cancel
+              </button>
+              <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog"
+                   aria-labelledby="modal-notification" aria-hidden="true">
+                <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h6 class="modal-title" id="modal-title-notification">Alert</h6>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true"></span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="py-3 text-center">
+                        <i class="fa-regular fa-trash-can fa-5x" style="color: #d00b0b;"></i>                        <h4 class="text-gradient text-danger mt-4"> Cancel Reservation!</h4>
+                        <!--                          <p>Confirm Cancel This Reservation ?</p>-->
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-bs-dismiss="modal"
+                              (click)="deleteReservationById(rent.id)">Cancel
+                      </button>
+                      <button type="button" class="btn btn-secondary text-white ml-auto" data-bs-dismiss="modal">No
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+            </ng-container>
+
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 
