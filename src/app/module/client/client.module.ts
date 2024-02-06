@@ -12,6 +12,7 @@ import { VehicleDetailsComponent } from './vehicle-details/vehicle-details.compo
 import {SharedModule} from "../../shared/shared.module";
 import { AllVehicleComponent } from './all-vehicle/all-vehicle.component';
 import { RentDetailsComponent } from './rent-details/rent-details.component';
+import { RentalHistoryComponent } from './rental-history/rental-history.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { RentDetailsComponent } from './rent-details/rent-details.component';
     RegisterComponent,
     VehicleDetailsComponent,
     AllVehicleComponent,
-    RentDetailsComponent
+    RentDetailsComponent,
+    RentalHistoryComponent
   ],
   imports: [
     CommonModule,
