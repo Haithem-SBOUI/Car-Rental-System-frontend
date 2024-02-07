@@ -5,7 +5,7 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './panel.component.html',
   styleUrls: ['./panel.component.css']
 })
-export class PanelComponent  implements OnInit {
+export class PanelComponent implements OnInit {
 
   public datasets: any;
   public data: any;
@@ -22,17 +22,24 @@ export class PanelComponent  implements OnInit {
     this.data = this.datasets[0];
 
 
-
-
-
-
-
-
   }
 
 
   public updateOptions() {
     this.salesChart.data.datasets[0].data = this.data;
     this.salesChart.update();
+  }
+
+  sideNavToggle = false;
+  bodyClass= "g-sidenav-show bg-gray-100";
+  toggleSidenavClass() {
+    this.sideNavToggle = !this.sideNavToggle;
+    if (!this.sideNavToggle) {
+      this.bodyClass = "g-sidenav-show bg-gray-100";
+
+    } else {
+      this.bodyClass = "g-sidenav-show bg-gray-100 g-sidenav-pinned";
+
+    }
   }
 }

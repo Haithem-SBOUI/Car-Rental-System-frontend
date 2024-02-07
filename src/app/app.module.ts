@@ -8,6 +8,8 @@ import {FormsModule} from "@angular/forms";
 import {AdminModule} from "./module/admin/admin.module";
 import {ClientModule} from "./module/client/client.module";
 import {HttpClientModule} from "@angular/common/http";
+import {RouterModule} from "@angular/router";
+import {DataTablesModule} from "angular-datatables";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,11 @@ import {HttpClientModule} from "@angular/common/http";
     FormsModule,
     AdminModule,
     ClientModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    DataTablesModule
+    // Routes
+
   ],
   providers: [],
   bootstrap: [AppComponent]

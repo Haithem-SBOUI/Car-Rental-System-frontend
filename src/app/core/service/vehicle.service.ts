@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {VehicleDetails} from "../../model/VehicleDetails.model";
+import {AuthService} from "./auth.service";
+import {ReservationDetailsModel} from "../../model/ReservationDetails.model";
 
 @Injectable({
   providedIn: 'root'
@@ -8,8 +10,8 @@ import {VehicleDetails} from "../../model/VehicleDetails.model";
 export class VehicleService {
 
   private baseUrl = 'http://localhost:8080/api/v1/vehicle';
-
-  constructor(private http: HttpClient) { }
+  loggedUserId = this.authService.getUserDetails("id");
+  constructor(private http: HttpClient, private authService:AuthService) { }
 
   getAll() {
     // return this.http.get<VehicleDetails>(this.baseUrl);
@@ -23,5 +25,16 @@ export class VehicleService {
 
   findById(idVehicle: string | undefined) {
     return this.http.get<VehicleDetails>(`${this.baseUrl}/find-vehicle-by-id/${idVehicle}`);
+  }
+
+  createVehicle(vehicleForm: any) {
+    return this.http.post<VehicleDetails>(`${this.baseUrl}/add-vehicle/${this.loggedUserId}`, vehicleForm);
+
+  }
+
+  deleteVehicleById(id: string | undefined) {
+    return this.http.delete(`${this.baseUrl}/delete-vehicle-by-id/${this.loggedUserId}/${id}`);
+
+
   }
 }

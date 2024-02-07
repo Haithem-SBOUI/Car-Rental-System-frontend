@@ -1,0 +1,129 @@
+<div class="container-fluid py-4 mt-2">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card border border-2">
+        <div class="card-header pb-0">
+          <div class="d-flex align-items-center">
+            <p class="mb-0 card-header-text1 bold">Add New Vehicle</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <!-- your-component.component.html -->
+
+          <form [formGroup]="vehicleForm" (ngSubmit)="createVehicle()">
+            <p class="text-uppercase card-header-text2 text-sm">Vehicle Information</p>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="brand" class="form-control-label">Brand</label>
+                  <input id="brand" class="form-control" type="text" formControlName="brand">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="model" class="form-control-label">Model</label>
+                  <input id="model" class="form-control" type="text" formControlName="model">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="licensePlateNumber" class="form-control-label">Plate Number</label>
+                  <input id="licensePlateNumber" class="form-control" type="text" formControlName="licensePlateNumber">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="launchYear" class="form-control-label">Launch year</label>
+                  <input id="launchYear" class="form-control" type="text" formControlName="launchYear">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="color" class="form-control-label">Color</label>
+                  <input id="color" class="form-control" type="text" formControlName="color">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="mileage" class="form-control-label">Mileage</label>
+                  <input id="mileage" class="form-control" type="text" formControlName="mileage">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="pricePerDay" class="form-control-label">Price</label>
+                  <input id="pricePerDay" class="form-control" type="number" formControlName="pricePerDay">
+                </div>
+              </div>
+            </div>
+
+            <hr class="horizontal dark">
+
+            <p class="text-uppercase text-sm card-header-text2">Technical Specifications</p>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="fuel" class="form-control-label">Fuel</label>
+                  <input id="fuel" class="form-control" type="text" formControlName="fuel">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="transmissionType">Transmission Type</label>
+                  <select id="transmissionType" class="form-control" formControlName="transmissionType">
+                    <option value="Automatic">Automatic</option>
+                    <option value="Manual">Manual</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="horsPower" class="form-control-label">Horsepower</label>
+                  <input id="horsPower" class="form-control" type="text" formControlName="horsPower">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="lastMaintenanceMileage" class="form-control-label">Price/Day</label>
+                  <input id="lastMaintenanceMileage" class="form-control" type="text" formControlName="lastMaintenanceMileage">
+                </div>
+              </div>
+              <div class="col-md-4 mt-2">
+                <div class="form-check form-switch">
+                  <input id="isAvailable" class="form-check-input" type="checkbox" formControlName="isAvailable">
+                  <label for="isAvailable" class="form-control-label">Available?</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-3">
+              <button type="submit" class="btn btn-primary btn-lg w-100">
+                <span class="btn-inner--text text-white">Create</span>
+              </button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card">
+        <div class="card-header pb-0">
+          <div class="d-flex align-items-center">
+            <p class="mb-0 card-header-text1 bold">Upload Images</p>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="form-group">
+            <div style="display: flex; justify-content: center; align-items: center; height: 20vh;">
+              <i class="fa-solid fa-arrow-up-from-bracket fa-5x"></i>
+            </div>
+            <input class="form-control mt-3" type="file">
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

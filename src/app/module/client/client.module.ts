@@ -12,6 +12,8 @@ import {SharedModule} from "../../shared/shared.module";
 import {AllVehicleComponent} from './all-vehicle/all-vehicle.component';
 import {RentDetailsComponent} from './rent-details/rent-details.component';
 import {RentalHistoryComponent} from './rental-history/rental-history.component';
+import {RouterModule} from "@angular/router";
+import {CarouselModule} from "ngx-owl-carousel-o";
 
 
 @NgModule({
@@ -29,7 +31,10 @@ import {RentalHistoryComponent} from './rental-history/rental-history.component'
     CommonModule,
     ClientRoutingModule,
     ReactiveFormsModule,
-    SharedModule
+    SharedModule,
+    RouterModule,
+    CarouselModule,
+    // Routes
   ]
 })
 export class ClientModule {

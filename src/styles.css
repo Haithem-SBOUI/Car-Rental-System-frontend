@@ -6,9 +6,12 @@
 
   --price-font: 'Kalam', cursive;
   --car-name-font: 'Raleway', sans-serif;
+  --admin-text-font: 'Poppins', sans-serif;
 }
+
 body {
   color: #1b1b1e;
+  background-color: #e7e7e7;
 }
 
 
@@ -61,7 +64,7 @@ body {
 
 .price-font {
   background-color: rgba(163, 44, 48);
-  color: white!important;
+  color: white !important;
   font-family: var(--price-font);
   font-weight: 600;
   font-size: 20px;
@@ -81,15 +84,49 @@ body {
   font-family: var(--car-name-font);
   font-weight: 600;
 }
+
 a {
-  color: var(--main-color)!important;
+  color: var(--main-color) !important;
 }
+
 span {
   color: #363636;
 }
+
 .mt-10 {
   margin-top: 10%;
 }
+
 .iconify {
   cursor: pointer;
 }
+
+.card-header-text1 {
+  color: #4E73DF;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.card-header-text2 {
+  color: rgba(78, 115, 223, 0.92);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+input, select {
+  border: 1px solid #b0b0b0 !important;
+}
+
+th {
+  text-transform: capitalize !important;
+  font-size: 16px;
+  color: #4d566e !important;
+}
+
+td {
+  text-transform: capitalize !important;
+  font-size: 16px;
+  color: #4d4949 !important;
+  font-family: var(--admin-text-font);
+}
+
