@@ -11,6 +11,7 @@ import {DataTablesModule} from "angular-datatables";
 import { ShowVehicleComponent } from './vehicle-managment/show-vehicle/show-vehicle.component';
 import { ShowReservationComponent } from './reservation-managment/show-reservation/show-reservation.component';
 import { AddReservationComponent } from './reservation-managment/add-reservation/add-reservation.component';
+import { InvoiceGeneratorComponent } from './invoice-generator/invoice-generator.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { AddReservationComponent } from './reservation-managment/add-reservation
     UpdateVehicleComponent,
     ShowVehicleComponent,
     ShowReservationComponent,
-    AddReservationComponent
+    AddReservationComponent,
+    InvoiceGeneratorComponent
   ],
   imports: [
     CommonModule,

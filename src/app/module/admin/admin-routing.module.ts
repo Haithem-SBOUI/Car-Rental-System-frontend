@@ -6,6 +6,7 @@ import {AddVehicleComponent} from "./vehicle-managment/add-vehicle/add-vehicle.c
 import {UpdateVehicleComponent} from "./vehicle-managment/update-vehicle/update-vehicle.component";
 import {ShowVehicleComponent} from "./vehicle-managment/show-vehicle/show-vehicle.component";
 import {ShowReservationComponent} from "./reservation-managment/show-reservation/show-reservation.component";
+import {InvoiceGeneratorComponent} from "./invoice-generator/invoice-generator.component";
 
 const routes: Routes = [
   {
@@ -19,6 +20,8 @@ const routes: Routes = [
       { path: 'update-vehicle/:id', component: UpdateVehicleComponent },
       // reservation
       { path: 'show-reservation', component: ShowReservationComponent },
+
+      { path: 'pdf', component: InvoiceGeneratorComponent },
     ],
   },
 ];
