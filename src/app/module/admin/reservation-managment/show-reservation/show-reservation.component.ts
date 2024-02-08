@@ -1,8 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Subject} from "rxjs";
-import {VehicleDetails} from "../../../../model/VehicleDetails.model";
 import {VehicleService} from "../../../../core/service/vehicle.service";
-import {Router} from "@angular/router";
 import {ReservationService} from "../../../../core/service/reservation-service";
 import {ReservationDetailsModel} from "../../../../model/ReservationDetails.model";
 import {AuthService} from "../../../../core/service/auth.service";
@@ -24,7 +22,6 @@ export class ShowReservationComponent implements OnInit {
   constructor(private vehicleService: VehicleService,
               private authService: AuthService,
               private reservationService: ReservationService,
-              private router: Router
   ) {
   }
 
@@ -49,38 +46,6 @@ export class ShowReservationComponent implements OnInit {
         }
       }, error => {
         console.log("error get all vehicle : ", error)
-      }
-    )
-
-
-  }
-
-
-  redirectToDetails(id
-                      :
-                      string | undefined
-  ) {
-    console.log(id);
-    this.router.navigate(['/user/rent-details', id]);
-  }
-  ;
-
-
-  deleteVehicleById(id
-                      :
-                      string | undefined
-  ) {
-
-
-    this.vehicleService.deleteVehicleById(id).subscribe(
-      (response) => {
-        console.log(response)
-        this.listReservationDetails = this.listReservationDetails
-          .filter(item => item.id !== id);
-
-      }, error => {
-        alert("Problem Occurred: " + error.error.message);
-
       }
     )
 
