@@ -1,6 +1,6 @@
 <div class="{{ bodyClass }}">
   <div class="min-height-300 bg-primary position-absolute w-100"></div>
-<!--  style="background-image: url('assets/img/admincover4.jpg'); background-position-y: 30%;"-->
+  <!--  style="background-image: url('assets/img/admincover4.jpg'); background-position-y: 30%;"-->
 
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4
    bg-white shadow" id="sidenav-main">
@@ -26,6 +26,7 @@
             <span class="nav-link-text ms-1">Dashboard</span>
           </a>
         </li>
+        <!--        start vehicle management-->
         <li class="nav-item mt-3">
           <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Vehicle Management</h6>
         </li>
@@ -35,7 +36,7 @@
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1" >show Vehicle</span>
+            <span class="nav-link-text ms-1">show Vehicle</span>
           </span>
         </li>
         <li class="nav-item">
@@ -44,7 +45,7 @@
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1" >Add Vehicle</span>
+            <span class="nav-link-text ms-1">Add Vehicle</span>
           </span>
         </li>
         <li class="nav-item">
@@ -53,9 +54,45 @@
               class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
               <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
             </div>
-            <span class="nav-link-text ms-1">All Vehicle</span>
+            <span class="nav-link-text ms-1">Update Vehicle</span>
           </span>
         </li>
+        <!--        end vehicle management-->
+
+        <!--        start Reservation management-->
+        <li class="nav-item mt-3">
+          <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Reservation Management</h6>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link " routerLink="show-reservation">
+            <div
+              class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">show Reservation</span>
+          </span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link " routerLink="add-vehicle">
+            <div
+              class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Add Reservation</span>
+          </span>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link " routerLink="update-vehicle">
+            <div
+              class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+              <i class="ni ni-credit-card text-success text-sm opacity-10"></i>
+            </div>
+            <span class="nav-link-text ms-1">Update Reservation</span>
+          </span>
+        </li>
+        <!--        end Reservation management-->
+
+
         <li class="nav-item">
           <a class="nav-link " href="./pages/billing.html">
             <div
@@ -179,7 +216,7 @@
                   <a class="dropdown-item border-radius-md" href="javascript:;">
                     <div class="d-flex py-1">
                       <div class="my-auto">
-                        <img src="./assets/img/small-logos/logo-spotify.svg"
+                        <img src="./assets/img/blog2.jpg"
                              class="avatar avatar-sm bg-gradient-dark  me-3 ">
                       </div>
                       <div class="d-flex flex-column justify-content-center">
@@ -237,7 +274,7 @@
     <!-- End Navbar -->
 
 
-      <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 
 
   </main>

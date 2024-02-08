@@ -11,6 +11,6 @@ export class VehicleDetails {
   horsPower?: number;
   pricePerDay?: number;
   isAvailable?: boolean;
-  insurance?: any;
+  insurance?: any | null;
   lastMaintenanceMileage?: number;
 }

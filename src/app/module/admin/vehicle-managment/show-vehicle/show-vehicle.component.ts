@@ -61,9 +61,6 @@ export class ShowVehicleComponent implements OnInit {
     this.vehicleService.deleteVehicleById(id).subscribe(
       (response) => {
         console.log(response)
-        this.dtTrigger.next(null);
-
-
           this.listVehicleDetails = this.listVehicleDetails
             .filter(item => item.id !== id);
 

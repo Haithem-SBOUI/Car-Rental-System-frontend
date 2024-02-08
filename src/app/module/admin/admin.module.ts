@@ -9,6 +9,8 @@ import { AddVehicleComponent } from './vehicle-managment/add-vehicle/add-vehicle
 import { UpdateVehicleComponent } from './vehicle-managment/update-vehicle/update-vehicle.component';
 import {DataTablesModule} from "angular-datatables";
 import { ShowVehicleComponent } from './vehicle-managment/show-vehicle/show-vehicle.component';
+import { ShowReservationComponent } from './reservation-managment/show-reservation/show-reservation.component';
+import { AddReservationComponent } from './reservation-managment/add-reservation/add-reservation.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { ShowVehicleComponent } from './vehicle-managment/show-vehicle/show-vehi
     PanelComponent,
     AddVehicleComponent,
     UpdateVehicleComponent,
-    ShowVehicleComponent
+    ShowVehicleComponent,
+    ShowReservationComponent,
+    AddReservationComponent
   ],
   imports: [
     CommonModule,

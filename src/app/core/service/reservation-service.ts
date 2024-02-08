@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CreateReservation} from "../../model/create-reservation.model";
 import {ReservationDetailsModel} from "../../model/ReservationDetails.model";
@@ -13,6 +13,9 @@ export class ReservationService {
   constructor(private http: HttpClient) {
   }
 
+  getAllReservation() {
+    return this.http.get<ReservationDetailsModel[]>(`${this.baseUrl}/find-all-reservation`);
+  }
 
   createReservation( reservation: CreateReservation){
     return this.http.post(`${this.baseUrl}/create-reservation`, reservation);
@@ -30,4 +33,8 @@ export class ReservationService {
     return this.http.delete<ReservationDetailsModel>(`${this.baseUrl}/delete-reservation-by-id/${userId}/${id}`);
   }
 
+
+  changeReservationStatus(id: string | undefined, status: string | undefined) {
+    return this.http.put<ReservationDetailsModel>(`${this.baseUrl}/change-reservation-status/${id}`, status);
+  }
 }
