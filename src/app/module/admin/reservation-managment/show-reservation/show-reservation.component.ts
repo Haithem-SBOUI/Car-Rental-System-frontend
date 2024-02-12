@@ -4,7 +4,7 @@ import {VehicleService} from "../../../../core/service/vehicle.service";
 import {ReservationService} from "../../../../core/service/reservation-service";
 import {ReservationDetailsModel} from "../../../../model/ReservationDetails.model";
 import {AuthService} from "../../../../core/service/auth.service";
-import {StatusEnum} from "../../../../model/StatusEnum.enum";
+import {StatusEnum} from "../../../../model/enum/StatusEnum.enum";
 
 @Component({
   selector: 'app-show-reservation',
@@ -108,5 +108,9 @@ export class ShowReservationComponent implements OnInit {
         alert("Problem Occurred: " + error.error.message);
       }
     )
+  }
+
+  handleButtonClick() {
+    console.log('Button clicked in App Component');
   }
 }

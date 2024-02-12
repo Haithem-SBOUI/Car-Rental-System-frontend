@@ -1,0 +1,70 @@
+<div class="container-fluid py-4 mt-2">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card border border-2">
+        <div class="card-header pb-0">
+          <div class="d-flex align-items-center">
+            <p class=" card-header-text1 bold">All Reservation</p>
+            <button class="btn bg-gradient-success ms-auto" routerLink="/admin/dashboard/add-vehicle"><i
+              class="fas fa-plus"></i>&nbsp;&nbsp;Add New Card
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+<!--          todo:update table template to follow billing page-->
+          <div class="dataTable-wrapper dataTable-loading no-footer sortable fixed-height fixed-columns">
+            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger"
+                   class="table table-bordered row-border hover">
+              <thead class="thead-light">
+              <tr class="">
+                <th>id</th>
+                <th>pickupDate</th>
+                <th>returnDate</th>
+                <th>totalPrice</th>
+                <th>nbDate</th>
+                <th>status</th>
+                <th>user</th>
+                <th>vehicle</th>
+                <th>actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor="let reservationDetails of listPayedReservationDetails">
+                <td>{{ reservationDetails.id }}</td>
+                <td>{{ reservationDetails.pickupDate }}</td>
+                <td>{{ reservationDetails.returnDate }}</td>
+                <td>{{ reservationDetails.totalPrice }}</td>
+                <td>{{ reservationDetails.nbDate }}</td>
+                <td>
+                  <span class="badge bg-gradient-success"> {{ reservationDetails.status }}
+                  </span>
+                </td>
+                <td>{{ reservationDetails.user!.email }}</td>
+                <td>{{ reservationDetails.vehicle?.brand }}, {{ reservationDetails.vehicle?.model }}</td>
+                <td class="align-middle text-center text-sm">
+
+
+                  <button type="button" class="btn btn-outline-info btn-sm mx-1"
+                          [routerLink]="['/user/rent-details', reservationDetails.id]">
+                    View Reservation
+                  </button>
+
+
+                  <invoice-generator [reservationId]="reservationDetails.id"
+                                     (buttonClick)="handleButtonClick()">
+                  </invoice-generator>
+
+                </td>
+
+              </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

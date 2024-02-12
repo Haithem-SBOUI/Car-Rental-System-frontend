@@ -12,6 +12,7 @@ import { ShowVehicleComponent } from './vehicle-managment/show-vehicle/show-vehi
 import { ShowReservationComponent } from './reservation-managment/show-reservation/show-reservation.component';
 import { AddReservationComponent } from './reservation-managment/add-reservation/add-reservation.component';
 import { InvoiceGeneratorComponent } from './invoice-generator/invoice-generator.component';
+import { InvoiceManagementComponent } from './invoice-management/invoice-management.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { InvoiceGeneratorComponent } from './invoice-generator/invoice-generator
     ShowVehicleComponent,
     ShowReservationComponent,
     AddReservationComponent,
-    InvoiceGeneratorComponent
+    InvoiceGeneratorComponent,
+    InvoiceManagementComponent
   ],
   imports: [
     CommonModule,

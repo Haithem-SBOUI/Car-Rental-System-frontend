@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {CreateReservation} from "../../model/create-reservation.model";
 import {ReservationDetailsModel} from "../../model/ReservationDetails.model";
+import {AuthService} from "./auth.service";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,10 @@ export class ReservationService {
   private baseUrl = 'http://localhost:8080/api/v1/reservation';
 
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService
+  ) {
   }
 
   getAllReservation() {
@@ -25,6 +29,10 @@ export class ReservationService {
     return this.http.get<ReservationDetailsModel[]>(`${this.baseUrl}/find-reservation-by-user-id/${id}`);
   }
 
+  findAllPayedReservation(){
+    return this.http.get<ReservationDetailsModel[]>(`${this.baseUrl}/find-all-payed-reservation`);
+  }
+
   findReservationById(id: string | undefined) {
     return this.http.get<ReservationDetailsModel>(`${this.baseUrl}/find-reservation-by-id/${id}`);
   }
@@ -35,6 +43,8 @@ export class ReservationService {
 
 
   changeReservationStatus(id: string | undefined, status: string | undefined) {
-    return this.http.put<ReservationDetailsModel>(`${this.baseUrl}/change-reservation-status/${id}`, status);
+    const adminId = this.authService.getUserDetails("id");
+    console.log("adminId from service ::::", adminId);
+    return this.http.put<ReservationDetailsModel>(`${this.baseUrl}/change-reservation-status/${id}/${adminId}`, status);
   }
 }

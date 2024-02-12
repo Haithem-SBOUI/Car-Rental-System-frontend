@@ -29,7 +29,6 @@ export class VehicleService {
 
   createVehicle(vehicleForm: any) {
     return this.http.post<VehicleDetails>(`${this.baseUrl}/add-vehicle/${this.loggedUserId}`, vehicleForm);
-
   }
   updateVehicle(vehicleForm: any) {
     return this.http.put<VehicleDetails>(`${this.baseUrl}/update-vehicle-by-id`, vehicleForm);

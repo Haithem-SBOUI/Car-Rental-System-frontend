@@ -1,25 +1,50 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import * as pdfMake from "pdfmake/build/pdfmake";
 import * as pdfFonts from "pdfmake/build/vfs_fonts";
-import {AuthService} from "../../../core/service/auth.service";
+import {InvoiceService} from "../../../core/service/invoice.service";
 
 (pdfMake as any).vfs = pdfFonts.pdfMake.vfs;
 
 
 @Component({
-  selector: 'app-invoice-generator',
-  templateUrl: './invoice-generator.component.html',
+  selector: 'invoice-generator',
+  template: '<button class="btn btn-primary btn-sm mx-2" type="button" (click)="onClick()"><i class="fa-regular fa-file-lines"></i> Open Invoice</button>',
   styleUrls: ['./invoice-generator.component.css']
 })
 export class InvoiceGeneratorComponent implements OnInit {
-  loggedInUser: any;
 
-  constructor(private authService: AuthService) {
+  @Input() reservationId: string | undefined;//todo:retry after delete ""
+  @Output() buttonClick = new EventEmitter<void>();
+  generatedInvoice: any;
+
+  constructor(private invoiceService: InvoiceService) {
   }
 
+
+  onClick(): void {
+    console.log("reservationId from onClick :", this.reservationId);
+    console.log("generatedInvoice", this.generatedInvoice);
+    this.generatePDF();
+  }
+
+
   ngOnInit(): void {
-    this.loggedInUser = this.authService.getUserDetails("all")
-    console.log("this.loggedInUser", this.loggedInUser)
+    console.log("reservationId from ngOnInit :", this.reservationId);
+
+    this.createInvoice();
+
+  }
+
+  createInvoice() {
+    this.invoiceService.findInvoiceByReservationId(this.reservationId).subscribe(
+      (response) => {
+        this.generatedInvoice = response;
+        console.log(" this.generatedInvoice : ", this.generatedInvoice);
+      }, error => {
+        console.log("error get invoice by ReservationId :", error);
+        // alert("error : " + error.error.message)
+      }
+    );
   }
 
 
@@ -133,7 +158,7 @@ export class InvoiceGeneratorComponent implements OnInit {
         {
           columns: [
             {
-              text: `Mr ${this.loggedInUser.username} \n Car Paradise Inc.`,
+              text: `Mr  \n Car Paradise Inc.`,
               bold: true,
               color: '#333333',
               alignment: 'left',

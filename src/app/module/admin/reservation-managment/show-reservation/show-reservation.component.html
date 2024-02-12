@@ -39,7 +39,7 @@
                   <span [ngClass]="getStatusClass(reservationDetails.status)"> {{ reservationDetails.status }}
                   </span>
                 </td>
-                <td>{{ reservationDetails.user.email }}</td>
+                <td>{{ reservationDetails.user!.email }}</td>
                 <td>{{ reservationDetails.vehicle?.brand }}, {{ reservationDetails.vehicle?.model }}</td>
                 <td class="align-middle text-center text-sm">
 
@@ -84,6 +84,8 @@
                           [routerLink]="['/user/rent-details', reservationDetails.id]">
                     View
                   </button>
+
+
 
 
                   <button type="button" class="btn btn-danger btn-sm mb-3" data-bs-toggle="modal"

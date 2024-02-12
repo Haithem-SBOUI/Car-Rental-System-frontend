@@ -84,7 +84,7 @@ export class VehicleDetailsComponent implements OnInit {
       this.createReservationForm.get("pickupDate").value,
       // todo: fix totalDay doesnt reach backend
       this.totalDay,
-      this.totalPrice
+
     );
 
     this.reservationService.createReservation(createReservationObj).subscribe(
