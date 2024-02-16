@@ -10,46 +10,43 @@
         <section id="search">
           <div class="container search-block p-5">
 
-            <form class="row">
+            <form class="row" [formGroup]="vehicleForm" (ngSubmit)="onSubmit()">
               <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
-                <label for="vehicle" class="label-style text-capitalize form-label">Vehicle type</label>
+                <label for="vehicleBrand" class="label-style text-capitalize form-label">Vehicle type</label>
                 <div class="input-group date ">
-                  <!-- <input type="text" class="form-control p-3 " id="vehicle" placeholder="Select Car Group" /> -->
-                  <select class="form-select form-control p-3" id="vehicle" aria-label="Default select example"
-                          style="background-image: none;">
-                    <option selected>Select Vehicle Type</option>
-                    <option value="1">BMW x3</option>
-                    <option value="2">BMW M2</option>
-                    <option value="3">Ford explorer</option>
-                    <option value="4">Ferrari</option>
-                    <option value="5">Mercedes-Benz</option>
-                    <option value="6">Sports car</option>
-                    <option value="7">Tesla</option>
+                  <!-- <input type="text" class="form-control  " id="vehicle" placeholder="Select Car Group" /> -->
+
+
+                  <select id="vehicleBrand" class="form-control" formControlName="brand">
+                    <option value="" selected>...</option>
+                    <option *ngFor="let brand of carBrands" [value]="brand">{{ brand }}</option>
                   </select>
-                  <span class="search-icon-position position-absolute p-3 ">
+
+                  <span class="search-icon-position position-absolute  ">
                             <i class="search-icons" icon="solar:bus-outline"></i>
                         </span>
                 </div>
               </div>
               <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
-                <label for="location" class="label-style text-capitalize form-label">Picking up location</label>
-                <div class="input-group date">
-                  <input type="text" class="form-control p-3 position-relative" id="location"
-                         placeholder="Airport or anywhere"/>
-                  <span class="search-icon-position position-absolute p-3 ">
-                            <i class="search-icons" icon="solar:map-arrow-square-outline"></i>
-                        </span>
-
-
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
-                <label for="pick-up-date" class="label-style text-capitalize form-label">Picking up date</label>
+                <label for="pick-up-date" class="label-style text-capitalize form-label">Picking-up date</label>
                 <div class="input-group date" id="datepicker1">
-                  <input type="text" class="form-control p-3" id="pick-up-date"/>
+                  <input type="date" class="form-control " formControlName="pickupDate" id="pick-up-date"/>
 
                   <span class="input-group-append">
-                            <span class="search-icon-position position-absolute p-3">
+                            <span class="search-icon-position position-absolute ">
+                                <i class="search-icons" icon="solar:calendar-broken"></i>
+                            </span>
+                  </span>
+
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
+                <label for="model" class="label-style text-capitalize form-label">model</label>
+                <div class="input-group date" id="model1">
+                  <input type="text" class="form-control " formControlName="model" id="model"/>
+
+                  <span class="input-group-append">
+                            <span class="search-icon-position position-absolute ">
                                 <i class="search-icons" icon="solar:calendar-broken"></i>
                             </span>
                         </span>
@@ -57,23 +54,26 @@
                 </div>
               </div>
               <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
-                <label for="return-date" class="label-style text-capitalize form-label">Returning date</label>
-                <div class="input-group date" id="datepicker2">
-                  <input type="text" class="form-control p-3" id="return-date"/>
+                <label for="pick-up-date" class="label-style text-capitalize form-label">maxPrice</label>
+                <div class="input-group date" id="maxPrice1">
+                  <input type="text" class="form-control " formControlName="maxPrice" id="maxPrice"/>
 
                   <span class="input-group-append">
-                            <span class="search-icon-position position-absolute p-3">
+                            <span class="search-icon-position position-absolute ">
                                 <i class="search-icons" icon="solar:calendar-broken"></i>
                             </span>
                         </span>
 
                 </div>
               </div>
+
+              <div class="d-grid gap-2 mt-4">
+                <button class="btn btn-primary " type="submit">Find your car</button>
+              </div>
+
             </form>
 
-            <div class="d-grid gap-2 mt-4">
-              <button class="btn btn-primary " type="button">Find your car</button>
-            </div>
+
           </div>
 
         </section>
@@ -82,12 +82,5 @@
   </div>
 </section>
 
-<div>Some tags before</div>
-<owl-carousel-o [options]="customOptions">
-  <ng-template carouselSlide>
-    <img src="assets/img/blog3.jpg" alt="sqd">
-  </ng-template>
-  <ng-template carouselSlide> <img src="assets/img/blog4.jpg" alt="sqd"></ng-template>
-  <ng-template carouselSlide> <img src="assets/img/blog6.jpg" alt="sqd"></ng-template>
-</owl-carousel-o>
+
 <div>Some tags after</div>

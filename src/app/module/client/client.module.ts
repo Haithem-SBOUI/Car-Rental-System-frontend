@@ -14,6 +14,7 @@ import {RentDetailsComponent} from './rent-details/rent-details.component';
 import {RentalHistoryComponent} from './rental-history/rental-history.component';
 import {RouterModule} from "@angular/router";
 import {CarouselModule} from "ngx-owl-carousel-o";
+import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {CarouselModule} from "ngx-owl-carousel-o";
     VehicleDetailsComponent,
     AllVehicleComponent,
     RentDetailsComponent,
-    RentalHistoryComponent
+    RentalHistoryComponent,
+    VehicleListComponent
   ],
   imports: [
     CommonModule,

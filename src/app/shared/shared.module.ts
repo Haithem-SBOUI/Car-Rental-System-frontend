@@ -1,18 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlateNumberCachingPipe } from './pipe/plate-number-caching.pipe';
+import { CarBrandSelectComponent } from './car-brand-select/car-brand-select.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
 @NgModule({
   declarations: [
-    PlateNumberCachingPipe
+    PlateNumberCachingPipe,
+    CarBrandSelectComponent
   ],
   exports: [
-    PlateNumberCachingPipe
+    PlateNumberCachingPipe,
+    CarBrandSelectComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ]
 })
 export class SharedModule { }

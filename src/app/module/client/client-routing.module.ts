@@ -8,6 +8,7 @@ import {VehicleDetailsComponent} from "./vehicle-details/vehicle-details.compone
 import {AllVehicleComponent} from "./all-vehicle/all-vehicle.component";
 import {RentDetailsComponent} from "./rent-details/rent-details.component";
 import {RentalHistoryComponent} from "./rental-history/rental-history.component";
+import {VehicleListComponent} from "./vehicle-list/vehicle-list.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/home', pathMatch: 'full',},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'navbar', component: NavbarComponent},
   {path: 'all-vehicle', component: AllVehicleComponent},
+  {path: 'vehicle-list', component: VehicleListComponent},
   {path: 'rent-details/:id', component: RentDetailsComponent},
   {path: 'vehicle-details/:id', component: VehicleDetailsComponent},
   {path: 'rental-history', component: RentalHistoryComponent},

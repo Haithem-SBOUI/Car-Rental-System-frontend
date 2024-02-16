@@ -1,14 +1,14 @@
 import {Component, OnInit} from '@angular/core';
-import {VehicleDetails} from "../../../model/VehicleDetails.model";
 import {VehicleService} from "../../../core/service/vehicle.service";
+import {VehicleDetails} from "../../../model/VehicleDetails.model";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-all-vehicle',
-  templateUrl: './all-vehicle.component.html',
-  styleUrls: ['./all-vehicle.component.css']
+  selector: 'app-vehicle-list',
+  templateUrl: './vehicle-list.component.html',
+  styleUrls: ['./vehicle-list.component.css']
 })
-export class AllVehicleComponent implements OnInit {
+export class VehicleListComponent implements OnInit {
 
   vehicleDetails: VehicleDetails[] = [];
 
