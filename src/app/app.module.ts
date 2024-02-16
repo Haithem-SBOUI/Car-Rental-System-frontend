@@ -10,6 +10,7 @@ import {ClientModule} from "./module/client/client.module";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterModule} from "@angular/router";
 import {DataTablesModule} from "angular-datatables";
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {DataTablesModule} from "angular-datatables";
     ClientModule,
     HttpClientModule,
     RouterModule,
-    DataTablesModule
+    DataTablesModule,
+    NgbModule
     // Routes
 
   ],

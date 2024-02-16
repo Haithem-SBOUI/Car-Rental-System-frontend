@@ -15,6 +15,7 @@ import {RentalHistoryComponent} from './rental-history/rental-history.component'
 import {RouterModule} from "@angular/router";
 import {CarouselModule} from "ngx-owl-carousel-o";
 import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
+import {NgbAccordionButton, NgbModule} from "@ng-bootstrap/ng-bootstrap";
 
 
 @NgModule({
@@ -36,7 +37,7 @@ import { VehicleListComponent } from './vehicle-list/vehicle-list.component';
     SharedModule,
     RouterModule,
     CarouselModule,
-    // Routes
+    NgbModule
   ]
 })
 export class ClientModule {
