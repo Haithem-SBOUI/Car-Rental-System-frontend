@@ -21,20 +21,6 @@ export class VehicleListComponent implements OnInit {
 
   }
 
-  findAllFreeVehicleByDateTime(date: string){
-    this.vehicleService.findAllFreeVehicleByDateTime(date).subscribe(
-      // (response :VehicleDetails[])
-      response  => {
-        if (response) {
-          console.log('response === ', response);
-          this.vehicleDetails = response;
-        }
-      }, error => {
-        console.log('error === ', error);
-        alert("error fetching data");
-
-      }
-    )
-  }
+  findAllFreeVehicleByDateTime(date: string){  }
 
 }

@@ -21375,7 +21375,7 @@ fieldset:disabled .btn {
   position: relative;
   overflow: hidden;
   display: flex;
-  align-items: center;
+  /*align-items: center;*/
   background-size: cover;
   background-position: 50%;
 }

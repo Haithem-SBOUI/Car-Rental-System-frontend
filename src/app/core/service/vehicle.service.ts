@@ -24,10 +24,6 @@ export class VehicleService {
     return this.http.get<VehicleDetails[]>(`${this.baseUrl}/get-all-vehicle`);
   }
 
-  findAllFreeVehicleByDateTime(date: string) {
-    // return this.http.get<VehicleDetails>(this.baseUrl);
-    return this.http.get<VehicleDetails[]>(`${this.baseUrl}/find-all-free-vehicle-by-date-time?startDate=${date}`);
-  }
 
   findById(idVehicle: string | undefined) {
     return this.http.get<VehicleDetails>(`${this.baseUrl}/find-vehicle-by-id/${idVehicle}`);

@@ -91,4 +91,9 @@
   transform: scale(1.1); /* Adjust the zoom effect as needed */
 }
 
+.address, span, td, p {
+  color: #bfbebe !important;
+}
+
+
 

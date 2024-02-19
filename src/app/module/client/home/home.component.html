@@ -1,136 +1,79 @@
 <user-navbar></user-navbar>
 
 
-<section class="section1">
-  <div class="container">
-    <div class="overlay">
-      <!-- Content in the middle of the section -->
-      <div class="searchbox">
-        <!-- search section start  -->
-        <section id="search">
-          <div class="container search-block p-5">
 
-            <form class="row" [formGroup]="vehicleForm" (ngSubmit)="onSubmit()">
-              <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
-                <label for="vehicleBrand" class="label-style text-capitalize form-label">Vehicle type</label>
-                <div class="input-group date ">
-                  <!-- <input type="text" class="form-control  " id="vehicle" placeholder="Select Car Group" /> -->
-
-
-                  <select id="vehicleBrand" class="form-control" formControlName="brand">
-                    <option value="" selected>...</option>
-                    <option *ngFor="let brand of carBrands" [value]="brand">{{ brand }}</option>
-                  </select>
-
-                  <span class="search-icon-position position-absolute  ">
-                            <i class="search-icons" icon="solar:bus-outline"></i>
-                        </span>
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
-                <label for="pick-up-date" class="label-style text-capitalize form-label">Picking-up date</label>
-                <div class="input-group date" id="datepicker1">
-                  <input type="date" class="form-control " formControlName="pickupDate" id="pick-up-date"/>
-
-                  <span class="input-group-append">
-                            <span class="search-icon-position position-absolute ">
-                                <i class="search-icons" icon="solar:calendar-broken"></i>
-                            </span>
-                  </span>
-
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
-                <label for="model" class="label-style text-capitalize form-label">model</label>
-                <div class="input-group date" id="model1">
-                  <input type="text" class="form-control " formControlName="model" id="model"/>
-
-                  <span class="input-group-append">
-                            <span class="search-icon-position position-absolute ">
-                                <i class="search-icons" icon="solar:calendar-broken"></i>
-                            </span>
-                        </span>
-
-                </div>
-              </div>
-              <div class="col-12 col-md-6 col-lg-3 mt-4 mt-lg-0">
-                <label for="pick-up-date" class="label-style text-capitalize form-label">maxPrice</label>
-                <div class="input-group date" id="maxPrice1">
-                  <input type="text" class="form-control " formControlName="maxPrice" id="maxPrice"/>
-
-                  <span class="input-group-append">
-                            <span class="search-icon-position position-absolute ">
-                                <i class="search-icons" icon="solar:calendar-broken"></i>
-                            </span>
-                        </span>
-
-                </div>
-              </div>
-
-              <div class="d-grid gap-2 mt-4">
-                <button class="btn btn-primary " type="submit">Find your car</button>
-              </div>
-
-            </form>
-
-
-          </div>
-
-        </section>
-      </div>
-    </div>
-  </div>
+<section class="">
+  <app-all-vehicle></app-all-vehicle>
 </section>
 
-
-<h3 class="mt-5 text-center">Our Rental Process</h3>
+<section class="bg-white py-5 ">
+<h3 class="text-center">Our Rental Process</h3>
 <div class="col-md-5 mx-auto mt-5">
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <!--        1st step-->
-
-      <div class="carousel-item active ">
-        <div class="page-header min-vh-75  m-3 border-radius-xl"
-             style="background-image: url('assets/img/main/step-1.png');">
+      <div class="carousel-item active">
+        <div class="page-header min-vh-50  m-3 border-radius-xl"
+             style="background-image: url('assets/img/main/1-choose-date-3d.jpg');">
+          <span class=" bg-gradient-dark"></span>
         </div>
-      </div>
-      <!--        2nd step-->
-      <div class="carousel-item  ">
-        <div class="page-header min-vh-75 m-3 border-radius-xl"
-             style="background-image: url('assets/img/main/step-2.png');">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6 my-auto">
-                <h1 class="text-white fadeIn2 fadeInBottom">BOOK YOUR CAR</h1>
-                <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">Wealth creation is an evolutionarily recent
-                  positive-sum game. Status is an old zero-sum game. Those attacking wealth creation are often just
-                  seeking status.</p>
+        <div class="container-fluid px-3">
+          <div class="col-lg-12">
+            <div class="info-horizontal bg-gradient-primary border-radius-xl p-5">
+              <div class="description ">
+                <h5 class="text-white text-center">1- Choose PickUp Date</h5>
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <!--        3rd step-->
-      <div class="carousel-item  ">
-        <div class="page-header min-vh-75 m-3 border-radius-xl"
-             style="background-image: url('assets/img/main/step-3.png');">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-6 my-auto">
-                <h1 class="text-white fadeIn2 fadeInBottom">FINISH PAYMENT PROCESS</h1>
-                <p class="lead text-white opacity-8 fadeIn3 fadeInBottom">Wealth creation is an evolutionarily recent
-                  positive-sum game. Status is an old zero-sum game. Those attacking wealth creation are often just
-                  seeking status.</p>
+      <div class="carousel-item ">
+        <div class="page-header min-vh-50 m-3 border-radius-xl"
+             style="background-image: url('assets/img/main/2-search-3d.jpg');">
+          <span class=" bg-gradient-dark"></span>
+        </div>
+        <div class="container-fluid px-3">
+          <div class="col-lg-12">
+            <div class="info-horizontal bg-gradient-primary border-radius-xl p-5">
+              <div class="description ">
+                <h5 class="text-white text-center">2- Choose a Car</h5>
               </div>
             </div>
           </div>
         </div>
       </div>
-
+      <div class="carousel-item ">
+        <div class="page-header min-vh-50 m-3 border-radius-xl"
+             style="background-image: url('assets/img/main/3-contract-3d.jpg');">
+          <span class=" bg-gradient-dark"></span>
+        </div>
+        <div class="container-fluid px-3">
+          <div class="col-lg-12">
+            <div class="info-horizontal bg-gradient-primary border-radius-xl p-5">
+              <div class="description ">
+                <h5 class="text-white text-center">3- Fill In the Form</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item ">
+        <div class="page-header min-vh-50 m-3 border-radius-xl"
+             style="background-image: url('assets/img/main/4-key-3d.jpg');">
+          <span class=" bg-gradient-dark"></span>
+        </div>
+        <div class="container-fluid px-3">
+          <div class="col-lg-12">
+            <div class="info-horizontal bg-gradient-primary border-radius-xl p-5">
+              <div class="description ">
+                <h5 class="text-white text-center">4- Take a Trip</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="min-vh-75 position-absolute w-100 top-0">
-      <a class="carousel-control-prev bg-dark" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
         <span class="carousel-control-prev-icon position-absolute bottom-50" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </a>
@@ -141,72 +84,53 @@
     </div>
   </div>
 </div>
-
+</section>
 
 <!--footer -->
-
-<!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="container my-5">
-
   <footer class="text-white text-center text-lg-start" style="background-color: #23242a;">
-    <!-- Grid container -->
     <div class="container p-4">
-      <!--Grid row-->
       <div class="row mt-4">
         <!--Grid column-->
         <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
           <h5 class="text-uppercase mb-4">About company</h5>
 
           <p>
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-            voluptatum deleniti atque corrupti.
+            Enjoy a hassle-free car rental with Car Paradise for city explorations, road trips, or business travels.
           </p>
 
           <p>
-            Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
-            molestias.
+            Our diverse vehicles are designed to meet your specific needs, providing you with the freedom to choose the
+            perfect ride.
           </p>
 
           <div class="mt-4">
-            <!-- Facebook -->
-            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-facebook-f"></i></a>
-            <!-- Dribbble -->
-            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-dribbble"></i></a>
-            <!-- Twitter -->
-            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-twitter"></i></a>
-            <!-- Google + -->
-            <a type="button" class="btn btn-floating btn-warning btn-lg"><i class="fab fa-google-plus-g"></i></a>
             <!-- Linkedin -->
+            <a type="button" class="btn btn-floating btn-primary text-white btn-lg mx-2"><i
+              class="fab fa-linkedin-in"></i></a>
+            <!-- Facebook -->
+            <a type="button" class="btn btn-floating btn-primary text-white btn-lg mx-2"><i
+              class="fab fa-facebook-f"></i></a>
+
           </div>
         </div>
         <!--Grid column-->
 
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4 pb-1">Search something</h5>
+          <h5 class="text-uppercase mb-4 ms-3 ">Address</h5>
 
-          <div class="form-outline form-white mb-4">
-            <input type="text" id="formControlLg" class="form-control form-control-lg">
-            <label class="form-label" for="formControlLg" style="margin-left: 0px;">Search</label>
-            <div class="form-notch">
-              <div class="form-notch-leading" style="width: 9px;"></div>
-              <div class="form-notch-middle" style="width: 48.8px;"></div>
-              <div class="form-notch-trailing"></div>
-            </div>
-          </div>
-
-          <ul class="fa-ul" style="margin-left: 1.65em;">
+          <ul class="fa-ul mt-4 address">
             <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">New York, NY 10012, US</span>
+              <span class="fa-li "><i class="fas fa-home"></i></span><span class="ms-2">Ariana, Tunisia</span>
             </li>
             <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">info@example.com</span>
+              <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">info@carparadise.com</span>
             </li>
             <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+ 01 234 567 88</span>
+              <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+216 21 000 021</span>
             </li>
             <li class="mb-3">
-              <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">+ 01 234 567 89</span>
+              <span class="fa-li"><i class="fas fa-print"></i></span><span class="ms-2">+216 23 000 023</span>
             </li>
           </ul>
         </div>
@@ -214,38 +138,32 @@
 
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-          <h5 class="text-uppercase mb-4">Opening hours</h5>
-
-          <table class="table text-center text-white">
-            <tbody class="font-weight-normal">
-            <tr>
-              <td>Mon - Thu:</td>
-              <td>8am - 9pm</td>
-            </tr>
-            <tr>
-              <td>Fri - Sat:</td>
-              <td>8am - 1am</td>
-            </tr>
-            <tr>
-              <td>Sunday:</td>
-              <td>9am - 10pm</td>
-            </tr>
-            </tbody>
-          </table>
+          <h5 class="text-uppercase mb-4 ">Opening hours</h5>
+          <div class="address">
+            <table class="table text-center text-white ">
+              <tbody class="font-weight-normal ">
+              <tr>
+                <td class="address">Mon - Thu:</td>
+                <td>8am - 9pm</td>
+              </tr>
+              <tr>
+                <td>Fri - Sat:</td>
+                <td>8am - 1am</td>
+              </tr>
+              <tr>
+                <td>Sunday:</td>
+                <td>9am - 10pm</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
         <!--Grid column-->
       </div>
-      <!--Grid row-->
     </div>
-    <!-- Grid container -->
-
-    <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2020 Copyright:
-      <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+      © 2024 Copyright:
+      All Right Reserved
     </div>
-    <!-- Copyright -->
   </footer>
 
-</div>
-<!-- End of .container -->
