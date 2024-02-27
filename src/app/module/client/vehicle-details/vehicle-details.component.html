@@ -17,7 +17,8 @@
                         aria-label="Slide 3"></button>
               </div>
               <div class="carousel-inner">
-                <div class="carousel-item" *ngFor="let picturePath of vehicleDetails.picturePaths; let i = index" [class.active]="i === 0">
+                <div class="carousel-item" *ngFor="let picturePath of vehicleDetails.picturePaths; let i = index"
+                     [class.active]="i === 0">
                   <img [src]="'http://localhost:8080/' + picturePath" class="d-block w-100" alt="vehicleImg">
                 </div>
               </div>
@@ -46,7 +47,7 @@
             </div>
 
 
-            <div class="my-3">
+            <div class="my-3 mt-5">
               <h4 class="car-title text-black ">{{ this.vehicleDetails.brand }}</h4>
             </div>
             <div>
@@ -104,29 +105,32 @@
               <span class="color-square" [style.background-color]="this.vehicleDetails.color"></span>
             </div>
 
-            <form [formGroup]="createReservationForm" (ngSubmit)="createReservation(this.vehicleDetails.id)">
-              <div class="row">
-                <div class="col-md-6 my-2 ">
-                  <input type="date" formControlName="pickupDate" class="datePicker">
-                </div>
-                <div class="col-md-6 my-2 ">
-                  <input type="date" formControlName="returnDate" class="datePicker">
-                </div>
+            <form [formGroup]="reservationForm" (ngSubmit)="createReservation()">
+
+              <div class="col-md-5">
+                <b><span class="me-2">Pickup Date :</span></b> <br>
+
+                <input type="date" formControlName="pickupDate" class="datePicker">
               </div>
-              <p>Form Status: {{ createReservationForm.status }}</p>
+              <div class="col-md-5">
+                <b><span class="me-2">Return Date :</span></b> <br>
+
+                <input type="date" formControlName="returnDate" class="datePicker">
+              </div>
 
               <div class="row my-4">
                 <div class="col-md-4">
                   <button class="btn btn-secondary">Back</button>
                 </div>
 
+<!--                <div class="col-md-8">-->
+<!--                  <button class="btn custom-btn1-lg" type="button" (click)="calculateTotalPrice()"-->
+<!--                          [disabled]="!createReservationForm.valid">Calculate total-->
+<!--                  </button>-->
+<!--                </div>-->
                 <div class="col-md-8">
-                  <button class="btn custom-btn1-lg" type="button" (click)="calculateTotalPrice()"
-                          [disabled]="!createReservationForm.valid">Calculate total
-                  </button>
-                </div>
-                <div class="col-md-8">
-                  <button class="btn custom-btn1-lg" type="submit" [disabled]="!createReservationForm.valid">Rent Now
+<!--                  <button class="btn custom-btn1-lg" type="submit" [disabled]="!createReservationForm.valid">Rent Now-->
+                  <button class="btn custom-btn1-lg" type="submit">Rent Now
                   </button>
                 </div>
               </div>

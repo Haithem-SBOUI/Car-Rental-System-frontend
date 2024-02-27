@@ -21,7 +21,7 @@ export class ReservationService {
     return this.http.get<ReservationDetailsModel[]>(`${this.baseUrl}/find-all-reservation`);
   }
 
-  createReservation( reservation: CreateReservation){
+  createReservation( reservation: any){
     return this.http.post(`${this.baseUrl}/create-reservation`, reservation);
   }
 

@@ -9,86 +9,81 @@ import {map} from "rxjs";
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
+  userChart: any;
+  carChart: any;
+  reservationChart: any;
   dataa: any;
-  lineChart1: any;
-  pieChartData:any;
-  char1: any = new Chart({
-    chart: {
-      type: 'column'
-    },
-    title: {
-      text: 'Corn vs wheat estimated production for 2020',
-      align: 'left'
-    },
-    subtitle: {
-      text:
-        'Source: <a target="_blank" ' +
-        'href="https://www.indexmundi.com/agriculture/?commodity=corn">indexmundi</a>',
-      align: 'left'
-    },
-    xAxis: {
-      categories: ['USA', 'China', 'Brazil', 'EU', 'India', 'Russia'],
-      crosshair: true,
-      accessibility: {
-        description: 'Countries'
-      }
-    },
-    yAxis: {
-      min: 0,
-      title: {
-        text: '1000 metric tons (MT)'
-      }
-    },
-    tooltip: {
-      valueSuffix: ' (1000 MT)'
-    },
-    plotOptions: {
-      column: {
-        pointPadding: 0.2,
-        borderWidth: 0
-      }
-    },
-    series: [
-      {
-        type: 'column', // Specify the type for column chart
-        name: 'Corn',
-        data: [406292, 260000, 107000, 68300, 27500, 14500]
-      },
-      {
-        type: 'column', // Specify the type for column chart
-        name: 'Wheat',
-        data: [51086, 136000, 5500, 141000, 107180, 77000]
-      }
-    ]
+  reservationChartData: any;
+  carChartData: any;
+  userChartData: any;
 
-  })
+
+
 
   constructor(private vehicleService: VehicleService) {
 
   }
 
   ngOnInit() {
-    this.vehicleService.findNumberCarByBrand().subscribe(
+    this.NumberCarByBrand();
+    this.PickupMonth();
+    this.countByCreatedOn();
+
+  }
+  NumberCarByBrand() {
+    this.vehicleService.countByNumberCarByBrand().subscribe(
       (response: any) => {
         this.dataa = response;
-        this.pieChartData = this.dataa.map((item: any) => ({
+        this.carChartData = this.dataa.map((item: any) => ({
           name: item[0],
           y: item[1]
         }));
-        this.createChart();
+        this.createCarChart();
 
         console.log("this.dataa", this.dataa)
-        console.log("this.pieChartData", this.pieChartData)
-
-
+        console.log("this.carChartData", this.carChartData)
       }
     )
-
-
   }
 
-  createChart() {
-    this.lineChart1 = new Chart({
+  PickupMonth() {
+    this.vehicleService.countByPickupMonth().subscribe(
+      (response: any) => {
+        this.dataa = response;
+        this.reservationChartData = this.dataa.map((item: any) => ({
+          name: item[0],
+          y: item[1]
+        }));
+        this.createReservationChart();
+
+        console.log("this.dataa", this.dataa)
+        console.log("this.reservationChartData", this.reservationChartData)
+      }
+    )
+  }
+
+  countByCreatedOn() {
+    this.vehicleService.countByCreatedOn().subscribe(
+      (response: any) => {
+        this.dataa = response;
+        this.userChartData = this.dataa.map((item: any) => ({
+          name: item[0],
+          y: item[1]
+        }));
+        this.createUserChart();
+
+        console.log("this.dataa", this.dataa)
+        console.log("this.userChartData", this.userChartData)
+      }
+    )
+  }
+
+
+
+
+
+  createCarChart() {
+    this.carChart = new Chart({
       chart: {
         type: 'line',
         options3d: {
@@ -98,8 +93,7 @@ export class MainComponent implements OnInit {
         }
       },
       title: {
-        text: '3D',
-        // align: 'left'
+        text: 'Car Inventory Distribution'
       },
       accessibility: {
         point: {
@@ -127,31 +121,67 @@ export class MainComponent implements OnInit {
       series: [{
         type: 'pie',
         name: 'Share',
-        data: this.pieChartData
+        data: this.carChartData
       }]
 
     })
   }
 
+  createUserChart() {
+    this.userChart = new Chart({
+      chart: {
+        type: 'line'
+      },
+      title: {
+        text: 'Registered Users Insights'
+      },
+      credits: {
+        enabled: false
+      },
+      series: [
+        {
+          name: 'Registered Users Per Month',
+          data: this.userChartData,
+        } as any
+      ]
 
-  lineChart = new Chart({
-    chart: {
-      type: 'line'
-    },
-    title: {
-      text: 'Patients'
-    },
-    credits: {
-      enabled: false
-    },
-    series: [
-      {
-        name: 'Patients admitted',
-        data: [10, 2, 3, 6, 9, 17, 20, 10, 5, 2, 16]
-      } as any
-    ]
+    })
+  }
 
-  })
+
+  createReservationChart() {
+    this.reservationChart = new Chart({
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: 'Monthly Reservation Insights'
+      },
+
+      yAxis: {
+        min: 0,
+        title: {
+          text: 'Reservation / Month'
+        }
+      },
+
+      plotOptions: {
+        column: {
+          pointPadding: 0.2,
+          borderWidth: 0
+        }
+      },
+      series: [
+        {
+          type: 'column',
+          name: 'Reservation',
+          data: this.reservationChartData
+        }
+      ]
+
+    })
+  }
+
 
   pieChart = new Chart({
     chart: {

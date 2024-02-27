@@ -27,7 +27,12 @@ span {
 }
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
   color: var(--bs-nav-pills-link-active-color);
-  background-color: var(--bs-nav-pills-link-active-bg);
+  background-color: #5E72E4;
+
+}
+
+.bg-panel {
+  background-color: #5E72E4;
 
 }
 .nav-pills .nav-link {
