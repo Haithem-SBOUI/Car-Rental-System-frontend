@@ -50,8 +50,7 @@ export class AuthService {
   }
 
   register(data: any) {
-    return this.http.post(`${this.baseUrl}/register`, data, {responseType: "text"});
-
+    return this.http.post("http://localhost:8080/api/v1/auth/register", data);
   }
 
   isLoggedIn() {

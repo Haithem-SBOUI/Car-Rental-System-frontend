@@ -37,6 +37,14 @@
             </div>
           </div>
 
+          <!-- Image (file input) -->
+          <div class="row">
+            <div class="mb-3 col-md-5">
+              <label for="profileImage" class="form-label ms-1">Profile Image</label>
+              <input type="file" class="form-control" id="profileImage" (change)="onFileChange($event)"/>
+            </div>
+          </div>
+
           <input  type="checkbox" class="m-2" value="connected">By clicking Sign Up, you agree to our <a class="a-auth"
                                                                                                          routerLink="#">Terms</a>,
           <a class="a-auth" routerLink="#">Privacy Policy</a> and <a class="a-auth" routerLink="#">Cookies Policy</a>.

@@ -13,6 +13,7 @@ import { ShowReservationComponent } from './reservation-managment/show-reservati
 import { AddReservationComponent } from './reservation-managment/add-reservation/add-reservation.component';
 import { InvoiceGeneratorComponent } from './invoice-generator/invoice-generator.component';
 import { InvoiceManagementComponent } from './invoice-management/invoice-management.component';
+import {ChartModule} from "angular-highcharts";
 
 
 @NgModule({
@@ -27,13 +28,14 @@ import { InvoiceManagementComponent } from './invoice-management/invoice-managem
     InvoiceGeneratorComponent,
     InvoiceManagementComponent
   ],
-  imports: [
-    CommonModule,
-    AdminRoutingModule,
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    DataTablesModule
-  ]
+    imports: [
+        CommonModule,
+        AdminRoutingModule,
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        DataTablesModule,
+        ChartModule
+    ]
 })
 export class AdminModule { }

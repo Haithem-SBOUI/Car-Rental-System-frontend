@@ -24,22 +24,43 @@ export class RegisterComponent implements OnInit {
       lastname: ['', Validators.required],
       email: ['', Validators.required],
       password: ['', Validators.required],
-      role: ['ROLE_USER', Validators.required]
+      role: ['ROLE_USER', Validators.required],
+      profileImage: [null]
     })
   }
 
+
+  onFileChange(event: any) {
+    const file = (event.target as HTMLInputElement).files?.[0];
+    this.registerForm.patchValue({
+      profileImage: file
+    });
+  }
+
+
   register() {
-    this.authService.register(this.registerForm.value).subscribe(
+
+    const formData = new FormData();
+
+    Object.keys(this.registerForm.value).forEach(key => {
+      formData.append(key, this.registerForm.value[key]);
+    });
+    console.log("this.registerForm.value : ", this.registerForm.value);
+    console.log("this.formData after assign : ", formData);
+
+
+    this.authService.register(formData).subscribe(
       (response: any) => {
         console.log("response : ", response);
-        console.log("this.registerForm.value : ", this.registerForm.value);
         this.router.navigate(['/user/login']);
       }, error => {
-        // Handle login error (e.g., display error message)
         console.error('error.error : ', error.error, '|| error.status : ', error.status);
       }
     )
   }
+
+
+
 
 
 }

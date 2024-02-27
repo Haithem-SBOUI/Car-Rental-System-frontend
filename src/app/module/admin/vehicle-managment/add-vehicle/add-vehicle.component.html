@@ -118,7 +118,8 @@
             <div style="display: flex; justify-content: center; align-items: center; height: 20vh;">
               <i class="fa-solid fa-arrow-up-from-bracket fa-5x"></i>
             </div>
-            <input class="form-control mt-3" type="file">
+            <!-- Image (file input) -->
+            <input class="form-control mt-3" type="file" (change)="onFileChange($event)" multiple>
           </div>
 
         </div>

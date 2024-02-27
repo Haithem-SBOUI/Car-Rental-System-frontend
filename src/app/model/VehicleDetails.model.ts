@@ -13,6 +13,7 @@ export class VehicleDetails {
   isAvailable?: boolean;
   insurance?: any;
   lastMaintenanceMileage?: number;
+  picturePaths?: string[];
 
   constructor(
     id?: string,
@@ -29,7 +30,9 @@ export class VehicleDetails {
   isAvailable?: boolean,
   insurance?: any,
   lastMaintenanceMileage?: number,
-  ) {
+   picturePaths?: string[]
+
+) {
     this.id = id;
     this.licensePlateNumber = licensePlateNumber;
     this.brand = brand;
@@ -44,6 +47,7 @@ export class VehicleDetails {
     this.isAvailable = isAvailable;
     this.insurance = insurance;
     this.lastMaintenanceMileage = lastMaintenanceMileage;
+    this.picturePaths = picturePaths;
   }
 
 

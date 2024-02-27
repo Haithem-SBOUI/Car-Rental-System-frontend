@@ -23,6 +23,9 @@ export class VehicleService {
     // return this.http.get<VehicleDetails>(this.baseUrl);
     return this.http.get<VehicleDetails[]>(`${this.baseUrl}/get-all-vehicle`);
   }
+  findNumberCarByBrand() {
+    return this.http.get("http://localhost:8080/api/v1/analysis/find-number-car-by-brand");
+  }
 
 
   findById(idVehicle: string | undefined) {

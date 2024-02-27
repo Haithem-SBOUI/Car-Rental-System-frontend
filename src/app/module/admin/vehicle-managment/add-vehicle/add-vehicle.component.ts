@@ -36,14 +36,41 @@ export class AddVehicleComponent implements OnInit {
       pricePerDay: ['', Validators.required],
       lastMaintenanceMileage: ['', Validators.required],
       isAvailable: [null, Validators.required],
+      picture: [null]
+    });
+  }
+
+  onFileChange(event: any) {
+    const files: FileList | null = (event.target as HTMLInputElement).files;
+    this.vehicleForm.patchValue({
+      picture: files
     });
   }
 
 
   createVehicle() {
-      this.vehicleService.createVehicle(this.vehicleForm.value).subscribe(
+    const formData = new FormData();
+
+    // Append each file to the formData
+    if (this.vehicleForm.value.picture) {
+      for (let i = 0; i < this.vehicleForm.value.picture.length; i++) {
+        formData.append('pictures', this.vehicleForm.value.picture[i]);
+      }
+    }
+
+    // Append other form values
+    Object.keys(this.vehicleForm.value).forEach(key => {
+      if (key !== 'picture') {
+        formData.append(key, this.vehicleForm.value[key]);
+      }
+    });
+
+    console.log("this.registerForm.value : ", this.vehicleForm.value);
+    console.log("this.formData after assign : ", formData);
+
+
+    this.vehicleService.createVehicle(formData).subscribe(
         (response) => {
-          console.log("form before send", this.vehicleForm.value);
           console.log("response", response);
 
           // this.vehicleForm.reset();
